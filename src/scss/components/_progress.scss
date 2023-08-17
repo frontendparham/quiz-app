@@ -1,0 +1,55 @@
+.progress {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #b2d3f3;
+  position: relative;
+
+  &__steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__step {
+    width: 2rem;
+    height: 2rem;
+    background: #fff;
+    border: 2px solid #929eaf;
+    border-radius: 50%;
+    transition: background 1s;
+
+    &.selected {
+      border: 2px solid $color-primary;
+    }
+    &.completed {
+      border: 2px solid $color-primary;
+      background: $color-primary;
+    }
+  }
+
+  &__bar {
+    position: absolute;
+    width: 99%;
+    border-bottom: 2px solid #929eaf;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__percent {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid $color-primary;
+    z-index: 1;
+    transition: width 1s;
+  }
+}
+
+.custom-cooltipz {
+  --cooltipz-font-size: 1.2rem;
+  --cooltipz-arrow-size: 1.5rem;
+  --cooltipz-bg-color: #005cc8;
+  --cooltipz-border-color: #005cc8;
+}

@@ -1,0 +1,41 @@
+.quiz-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__navigate {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: -1rem;
+
+    button {
+      @include flexCenter;
+    }
+  }
+
+  &__btn {
+    &.not-active {
+      opacity: 0.3;
+    }
+
+    &:disabled {
+      cursor: default;
+      user-select: none;
+
+      .quiz-details__svg {
+        &:hover {
+          fill: $color-text-primary;
+        }
+      }
+    }
+  }
+
+  &__svg {
+    transition: all 0.2s;
+
+    &:hover {
+      fill: #b2d3f3;
+    }
+  }
+}

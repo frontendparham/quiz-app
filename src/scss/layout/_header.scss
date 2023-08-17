@@ -1,0 +1,44 @@
+.app-header {
+  padding: 3rem $paddig-sides;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  img {
+    width: 4rem;
+  }
+
+  a {
+    &:link,
+    &:visited {
+      color: #b2d3f3;
+      position: relative;
+      font-size: 1.8rem;
+    }
+
+    &::after {
+      content: "";
+      background-color: #b2d3f3;
+      width: 15%;
+      height: 1px;
+      position: absolute;
+      display: block;
+      bottom: -0.5rem;
+      left: 0;
+      transition: all 0.5s;
+    }
+
+    &:hover,
+    &:active {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

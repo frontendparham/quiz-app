@@ -1,0 +1,101 @@
+// Default
+.btn {
+  padding: 0.8em 1.55em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 0.3px solid $color-secondary;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 400;
+  font-size: $default-font-size;
+  font-family: inherit;
+  color: $color-secondary;
+  overflow: hidden;
+
+  &.default {
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      transform: skew(90deg) translate(-50%, -50%);
+      position: absolute;
+      inset: 50%;
+      left: 25%;
+      z-index: -1;
+      transition: 0.5s ease-out;
+      background-color: $color-primary;
+    }
+
+    &::before {
+      top: -50%;
+      left: -25%;
+      transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    &:hover::before {
+      transform: skew(45deg) rotate(180deg) translate(-48%, -50%);
+    }
+
+    &:hover::after {
+      transform: skew(45deg) translate(-48%, -50%);
+    }
+
+    &:hover {
+      color: $color-text-primary;
+      border: 0.3px solid $color-primary;
+    }
+
+    &:active {
+      filter: brightness(0.7);
+      transform: scale(0.98);
+    }
+  }
+}
+
+// OPTIONS
+.btn-option {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: flex-start;
+
+  // Check box
+  .checkbox {
+    @include flexCenter;
+  }
+
+  &.selected {
+    border-color: green;
+
+    .checkbox {
+      color: green;
+    }
+  }
+
+  &.notSelected {
+    opacity: 0.5;
+  }
+
+  &.correct {
+    color: $color-correct-answer;
+    border-color: $color-correct-answer;
+  }
+
+  &.wrong {
+    color: $color-wrong-answer;
+    border-color: $color-wrong-answer;
+  }
+}
+
+// Hidden
+.btn.hidden {
+  opacity: 0;
+  user-select: none;
+  appearance: none;
+  visibility: hidden;
+}

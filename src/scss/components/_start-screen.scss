@@ -1,0 +1,19 @@
+.start {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+  margin: 0 auto;
+
+  h3 {
+    span {
+      color: $color-secondary;
+    }
+  }
+
+  button {
+    margin-left: auto;
+    margin-top: 1rem;
+  }
+}
