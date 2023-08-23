@@ -1,6 +1,9 @@
 import "cooltipz-css";
+import { useQuiz } from "../contexts/QuizContext";
 
-function ProgressStep({ id, index, dispatch, answers }) {
+function ProgressStep({ id }) {
+  const { index, dispatch, answers } = useQuiz();
+
   return (
     <button
       className={`progress__step 

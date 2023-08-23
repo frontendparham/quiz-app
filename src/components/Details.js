@@ -1,6 +1,8 @@
 import { ArrowCircleRight, ArrowCircleLeft } from "@phosphor-icons/react";
+import { useQuiz } from "../contexts/QuizContext";
 
-function Details({ index, numQuestions, dispatch, answers }) {
+function Details() {
+  const { index, numQuestions, dispatch, answers } = useQuiz();
   const hasAnswerd = answers[index] !== undefined;
   const lastQuestion = index + 1 === numQuestions;
 

@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import ProgressStep from "./ProgressStep";
+import { useQuiz } from "../contexts/QuizContext";
 
-function Progress({ numQuestions, index, dispatch, answers }) {
+function Progress() {
+  const { numQuestions, index } = useQuiz();
   const progress = useRef(null);
 
   useEffect(
@@ -18,13 +20,7 @@ function Progress({ numQuestions, index, dispatch, answers }) {
       </div>
       <div className="progress__steps">
         {Array.from({ length: numQuestions }, (_, i) => (
-          <ProgressStep
-            id={i}
-            key={i}
-            index={index}
-            dispatch={dispatch}
-            answers={answers}
-          />
+          <ProgressStep id={i} key={i} />
         ))}
       </div>
     </div>

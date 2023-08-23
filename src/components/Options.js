@@ -1,6 +1,8 @@
 import { CheckSquare, Square } from "@phosphor-icons/react";
+import { useQuiz } from "../contexts/QuizContext";
 
-function Options({ question, dispatch, answers, index }) {
+function Options({ question }) {
+  const { dispatch, answers, index } = useQuiz();
   const hasAnswerd = answers[index] !== undefined;
 
   return (

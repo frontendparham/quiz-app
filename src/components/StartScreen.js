@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useQuiz } from "../contexts/QuizContext";
 
-function StartScreen({ dispatch }) {
+function StartScreen() {
+  const { dispatch } = useQuiz();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNum, setPhoneNum] = useState("");

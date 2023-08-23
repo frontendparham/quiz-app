@@ -1,4 +1,7 @@
-function NextButton({ dispatch, answers, index, numQuestions }) {
+import { useQuiz } from "../contexts/QuizContext";
+
+function NextButton() {
+  const { dispatch, answers, index, numQuestions } = useQuiz();
   if (answers[index] === undefined)
     return <button className="btn hidden">Next</button>;
 
